@@ -50,6 +50,30 @@ socia_icons:
  修改为
  updated_at: true
 ```
+## 文章字数、阅读时长统计
+
+- 安装插件
+
+```
+npm i --save hexo-wordcount
+```
+
+修改_config.yml
+
+```
+post_wordcount:
+  item_text: true
+  wordcount: true         # 单篇 字数统计
+  min2read: true          # 单篇 阅读时长
+  totalcount: false       # 网站 字数统计
+  separated_meta: true
+```
+## 页脚美化
+- 隐藏网页底部powered By Hexo / 强力驱动
+
+```
+copyright: false
+```
 
 # 阅读全文
 
@@ -154,9 +178,16 @@ npm install hexo-asset-image --save
 ```
 # 添加评论功能
 
+## 方法一: 来必力
+
 ```
 livere_uid: MTAyMC80MzgyNy8yMDM2Mg==
 ```
+
+## 方法二：Leancloud
+- 参考文章链接
+https://blog.csdn.net/weixin_39345384/article/details/80787998
+
 # 添加宠物
 - 在博客目录下安装依赖
 
@@ -185,10 +216,12 @@ live2d:
     show: true
 ```
 - 安装模型包
+
 ```
 npm install 模型的包名
 
 ```
+
 参考链接：
 https://blog.csdn.net/qq_43020645/article/details/82794092
 - 取消宠物

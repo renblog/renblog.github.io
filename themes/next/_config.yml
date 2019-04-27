@@ -54,7 +54,7 @@ footer:
   copyright:
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
-  powered: true
+  powered: false
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
@@ -233,7 +233,7 @@ post_meta:
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
+  wordcount: true #字数统计
   min2read: false
   totalcount: false
   separated_meta: true
@@ -381,9 +381,9 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true
+  appid: 8giMrXTEUVGGSKAeimuxTmMn-gzGzoHsz #your leancloud application appid
+  appkey:   GbBFYJ3DKzUPO1pz2615KRxw #your leancloud application appkey
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
   placeholder: Just go go # comment box placeholder
@@ -398,7 +398,7 @@ valine:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-livere_uid: MTAyMC80MzgyNy8yMDM2Mg==
+livere_uid: #MTAyMC80MzgyNy8yMDM2Mg==
 
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
@@ -555,7 +555,7 @@ busuanzi_count:
   enable: false
   # custom uv span for the whole site
   site_uv: true
-  site_uv_header: <i class="fa fa-user"></i>
+  site_uv_header: <i class="fa fa-user"></i> 
   site_uv_footer: 
   # custom pv span for the whole site
   site_pv: true
