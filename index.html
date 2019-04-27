@@ -310,7 +310,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/27/Hexo-2/" itemprop="url">Hexo-2</a></h1>
+                <a class="post-title-link" href="/2019/04/27/Hexo-2/" itemprop="url">Hexo-2 Hexo主题设置</a></h1>
         
 
         <div class="post-meta">
@@ -332,6 +332,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo-搭建心得/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo 搭建心得</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -362,7 +384,94 @@
       
         
           
-            
+            <h1 id="修改hexo部署端口"><a href="#修改hexo部署端口" class="headerlink" title="修改hexo部署端口"></a>修改hexo部署端口</h1><p>hexo server -p 80</p>
+<h2 id="站点-config-yml的修改"><a href="#站点-config-yml的修改" class="headerlink" title="站点_config.yml的修改"></a>站点_config.yml的修改</h2><ul>
+<li>基本信息</li>
+<li>语言<br>lanuage: zh-Hans</li>
+<li>next主题</li>
+</ul>
+<h2 id="主题-config-yml的修改"><a href="#主题-config-yml的修改" class="headerlink" title="主题_config.yml的修改"></a>主题_config.yml的修改</h2><h3 id="next主题样式："><a href="#next主题样式：" class="headerlink" title="next主题样式："></a>next主题样式：</h3><p>  scheme: Gemini</p>
+<h3 id="menu菜单"><a href="#menu菜单" class="headerlink" title="menu菜单"></a>menu菜单</h3><p>  home: / || home<br>  about: /about/ || user<br>  tags: /tags/ || tags<br>  categories: /categories/ || th<br>  archives: /archives/ || archive  </p>
+<h3 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h3><p>  avata:<br>  /images/cat.gif</p>
+<h3 id="next动态背景"><a href="#next动态背景" class="headerlink" title="next动态背景"></a>next动态背景</h3><ul>
+<li>搜索canvas_nest: true</li>
+</ul>
+<h3 id="侧边栏社交小图片设置"><a href="#侧边栏社交小图片设置" class="headerlink" title="侧边栏社交小图片设置"></a>侧边栏社交小图片设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#social: 注释去掉</span><br><span class="line">socia_icons:</span><br><span class="line">  enable: true</span><br><span class="line"></span><br><span class="line">  Github: github</span><br></pre></td></tr></table></figure>
+<h2 id="阅读全文"><a href="#阅读全文" class="headerlink" title="阅读全文"></a>阅读全文</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;\!--more--&gt; //没有斜杠</span><br></pre></td></tr></table></figure>
+<h2 id="添加分类"><a href="#添加分类" class="headerlink" title="添加分类"></a>添加分类</h2><ul>
+<li>新建一个分类页面</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+<p>source文件夹下有了categorcies/index.md<br>index.md内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 分类</span><br><span class="line">date: 2019-04-27 16:35:57</span><br><span class="line">type: &quot;categories&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>把文章归入分类只需在文章的顶部标题下方添加categories字段，即可自动创建分类名并加入对应的分类中</p>
+</li>
+<li><p>举个栗子：<br>title: 分类测试文章标题<br>categories: 分类名</p>
+</li>
+</ul>
+<h2 id="添加标签"><a href="#添加标签" class="headerlink" title="添加标签"></a>添加标签</h2><ul>
+<li>新建一个标签页面</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>source文件夹下有了tags/index.md<br>打开index.md文件将title设置为title: 标签<br>index.md内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2019-04-27 16:42:09</span><br><span class="line">type: &quot;tags&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>把文章添加标签只需在文章的顶部标题下方添加tags字段，即可自动创建标签名并归入对应的标签中</p>
+</li>
+<li><p>举个栗子：<br>title: 标签测试文章标题<br>tags:<br> -（空格）标签1<br> -（空格）标签2</p>
+</li>
+</ul>
+<h2 id="添加关于标签"><a href="#添加关于标签" class="headerlink" title="添加关于标签"></a>添加关于标签</h2><ul>
+<li>新建一个关于页面</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
+<ul>
+<li>source文件夹下有了about/index.md<br>index.md文件即可编辑关于你的信息<h2 id="添加搜索功能"><a href="#添加搜索功能" class="headerlink" title="添加搜索功能"></a>添加搜索功能</h2></li>
+<li>安装 hexo-generator-searchdb 插件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<ul>
+<li>打开 站点配置文件 找到Extensions在下面添加</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#搜索</span><br><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 10000</span><br></pre></td></tr></table></figure>
+<ul>
+<li>打开 主题配置文件 找到Local search，将enable设置为true</li>
+</ul>
+<h2 id="hexo文章加图片"><a href="#hexo文章加图片" class="headerlink" title="hexo文章加图片"></a>hexo文章加图片</h2><ul>
+<li>首先把修改站点_config.yml</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">psot_asset_folder:true</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在blog（hexo）目录下执行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>运行hexo new “博客名”来生成md博客时，会在_post目录下看到一个与博客同名的文件夹。</p>
+</li>
+<li><p>将想要上传的图片先扔到文件夹下，然后在博客中使用markdown的格式引入图片：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![你想要输入的替代文字](xxxx/图片名.jpg) //路径使用相对路径</span><br></pre></td></tr></table></figure>
+<h2 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">livere_uid: MTAyMC80MzgyNy8yMDM2Mg==</span><br></pre></td></tr></table></figure>
+<h2 id="添加宠物"><a href="#添加宠物" class="headerlink" title="添加宠物"></a>添加宠物</h2><ul>
+<li>在博客目录下安装依赖</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在站点_config.yml配置如下信息</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#宠物</span><br><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  debug: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-hijiki</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: true</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装模型包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install 模型的包名</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>参考链接：<br><a href="https://blog.csdn.net/qq_43020645/article/details/82794092" target="_blank" rel="noopener">https://blog.csdn.net/qq_43020645/article/details/82794092</a></p>
+<ul>
+<li>取消宠物</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+
           
         
       
