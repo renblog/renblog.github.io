@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Hexo-2]]></title>
+    <url>%2F2019%2F04%2F27%2FHexo-2%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo-1 Hexo环境搭建+github部署备份]]></title>
+    <url>%2F2019%2F04%2F27%2FHexo-1%2F</url>
+    <content type="text"><![CDATA[Hexo环境准备npm、hexo安装 阿里云轻量级服务器 or 虚拟机搭建的linux xshell远程链接阿里云服务器 服务器安装rz，szyum install lrzsz 安装node.js设置全局 123cd node/binln -s /root/install/node/bin/node /usr/local/bin/nodeln -s /root/install/node/bin/npm /usr/local/bin/npm 安装hexo并设置全局 12npm install hexo-cli -gln -s /root/install/node/lib/node_modules/hexo/bin/hexo /usr/local/bin/hexo github配置 github用户注册为renblog 创建renblog.github.io库 创建hexo分支，设置成为默认分支 安装git 1yum install git-core 克隆库 1git clone https://github.com/renblog/renblog.github.io.git 进入克隆的库执行 1npm install hexo - 注意 克隆的库中有.git文件夹，在hexo init执行前，一定先备份.git文件夹，在hexo init之后，再把备份的.git文件夹覆盖到renblog.github.io中 创建一个空的文件 然后执行如下命令 1hexo init 生成的文件移到renblog.github.io目录下并覆盖 renblog.github.io目录继续下执行 12npm installnpm install hexo-deployer-git（此时检查分支实在hexo下） blog备份到github上 修改_config.yml如下： 1234deploy: type: git repo: https://github.com/renblog/renblog.github.io branch: master 还是在renblog.github.io目录下执行 123git add .git commit -m &quot;命名&quot;git push origin hexo //推到github上， 部署博客到github 设置git的用户名和email（操作一次即可） 12git config --global user.name &quot;你的Github用户名&quot;git config --global user.email &quot;你注册Github使用的邮箱&quot; 部署到github上 1234hexo clean //如果界面有延迟执行此命令hexo g //生成加载页面npm install --save hexo-deployer-git //部署githexo d //部署hexo 访问git上的博客 链接为：renblog.github.io 关于日常的一些改动依此执行如下命令 1234git add .git commit -m &quot;注释&quot;git push origin hexo(此时默认分支依然是hexo) 然后执行 1hexo g -d //发布网站到master上 测试blog是否备份成功一 在我的阿里云服务器上测试 进入/var/www/html目录下 1git clone https://github.com/renblog/renblog.github.io.git //拷贝仓库 会生成renblog.github.io文件夹 进入此文件夹执行如下命令 123npm install hexonpm install npm install hexo-deployer-git 注意不需要加hexo init命令 创建一篇文章1hexo new Hexo-1 执行如下备份命令 12345git add.git commit -m &quot;注释&quot;git push origin hexogit cleangit g -d //推到github上 先备份后发布 测试blog是否备份成功二 将刚刚创建的新仓库 clone 至本地，将之前的 hexo 文件夹中的 _config.yml、themes/、source/、scaffolds/、package.json 和 .gitignore 复制至 WincerChan.github.io 文件夹； 将 themes/next/（我用的是 NexT 主题）中的 .git/ 删除，否则无法将主题文件夹 push（也可以将主题文件夹使用子模块的方式添加到该仓库)； 在 WincerChan.github.io 文件夹执行 npm install 和 npm install hexo-deployer-git（这里可以看一看分支是不是显示为 hexo）； 执行 git add、git commit -m “”、git push origin hexo 来提交 hexo 网站源文件； 执行 hexo g -d 生成静态网页部署至 Github 上。 git常用命令12git branch //查看当前分支 git checkout hexo //切换分支 Hexo _config.yml配置]]></content>
+      <categories>
+        <category>Hexo 搭建心得</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Http常见状态码含义]]></title>
+    <url>%2F2019%2F04%2F20%2FHttp-status%2F</url>
+    <content type="text"><![CDATA[1开头的http状态码表示临时响应并需要请求者继续执行操作的状态代码。 100 （继续） 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。101 （切换协议） 请求者已要求服务器切换协议，服务器已确认并准备切换。 2开头的http状态码表示请求成功 200 成功处理了请求，一般情况下都是返回此状态码；201 请求成功并且服务器创建了新的资源。202 接受请求但没创建资源；203 返回另一资源的请求；204 服务器成功处理了请求，但没有返回任何内容；205 服务器成功处理了请求，但没有返回任何内容；206 处理部分请求； 3xx （重定向）重定向代码，也是常见的代码 300 （多种选择） 针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。301 （永久移动） 请求的网页已永久移动到新位置。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。302 （临时移动） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。303 （查看其他位置） 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。304 （未修改） 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。305 （使用代理） 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。307 （临时重定向） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。 4开头的http状态码表示请求出错 400 服务器不理解请求的语法。401 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。403 服务器拒绝请求。404 服务器找不到请求的网页。405 禁用请求中指定的方法。406 无法使用请求的内容特性响应请求的网页。407 此状态代码与 401类似，但指定请求者应当授权使用代理。408 服务器等候请求时发生超时。409 服务器在完成请求时发生冲突。 服务器必须在响应中包含有关冲突的信息。410 如果请求的资源已永久删除，服务器就会返回此响应。411 服务器不接受不含有效内容长度标头字段的请求。412 服务器未满足请求者在请求中设置的其中一个前提条件。413 服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。414 请求的 URI（通常为网址）过长，服务器无法处理。415 请求的格式不受请求页面的支持。416 如果页面无法提供请求的范围，则服务器会返回此状态代码。417 服务器未满足”期望”请求标头字段的要求。 5开头状态码并不常见，但是我们应该知道 500 （服务器内部错误） 服务器遇到错误，无法完成请求。501 （尚未实施） 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码。502 （错误网关） 服务器作为网关或代理，从上游服务器收到无效响应。503 （服务不可用） 服务器目前无法使用（由于超载或停机维护）。 通常，这只是暂时状态。504 （网关超时） 服务器作为网关或代理，但是没有及时从上游服务器收到请求。505 （HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本]]></content>
+      <tags>
+        <tag>Http协议</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于反弹Shell的理解]]></title>
+    <url>%2F2019%2F04%2F20%2FRebound-shell%2F</url>
+    <content type="text"><![CDATA[想要搞清楚这个问题，首先要搞清楚什么是反弹，为什么要反弹。假设我们攻击了一台机器，打开了该机器的一个端口，攻击者在自己的机器去连接目标机器（目标ip：目标机器端口），这是比较常规的形式，我们叫做正向连接。远程桌面，web服务，ssh，telnet等等，都是正向连接。 那么什么情况下正向连接不太好用了呢？1.某客户机中了你的网马，但是它在局域网内，你直接连接不了。它的ip会动态改变，你不能持续控制。2.由于防火墙等限制，对方机器只能发送请求，不能接收请求。3.对于病毒，木马，受害者什么时候能中招，对方的网络环境是什么样的，什么时候开关机，都是未知，所以建立一个服务端，让恶意程序主动连接，才是上策。那么反弹就很好理解了， 攻击者指定服务端，受害者主机主动连接攻击者的服务端程序，就叫反弹连接。]]></content>
+      <tags>
+        <tag>反弹shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Metasploit-6-2 web应用渗透之漏洞扫描神器W3AF]]></title>
+    <url>%2F2019%2F04%2F20%2FMetasploit-6-2%2F</url>
+    <content type="text"><![CDATA[一、扫描神器W3AF（Web Application Attack and Audit Framework）1.W3AF简介W3AF是阿根廷人Andres Riancho创建的一个开源项目，目标是成为一个Web应用攻击和统计的平台。目前W3AF分为主要两个部分——核心模块和插件部分。核心模块负责进程的调度和插件的使用，插件部分则负责查找并攻击Web安全漏洞。插件部分根据功能的不同，又分为8类模块，包括：发现模块、审计模块、搜索模块、攻击模块、输出模块、修改模块、入侵模块、破解模块，他们之间的运行关系如图：2.各模块的功能（1）发现模块负责查找HTTP信息，并探测服务器、数据库、web应用防火墙等信息例如halberd、hmap、afd、fingetprint等信息。在发现模块中，最重要的插件是webSpider，它基于爬虫技术爬取网站的每个链接和表单，这是进行漏洞探测不可或缺的信息。（2）暴力破解破解哪些需要认证的页面，在发现过过程中，经常会遇到认证登陆页面，暴力破解模块支持对基本认证机制的破解（需要配置字典），以及表单登陆机制的暴力破解。（3）审计模块探测漏洞的模块，W3AF支持目前主流的web应用漏洞类型的探测，例如SQLi、XSS等，探测漏洞的方法也是多种多样的，例如模式匹配、基于显示错误的方法、基于时间延迟的方法、远程创建、响应差别（如采用不同的参数输入AND 1=1、AND 1=2）等，当确定存在安全漏洞的同时，存在漏洞的URL会被保存，等待攻击模块对它实施攻击。（4）搜索Grep捕获HTTP请求与应答过程中的一些关注信息（例如IP、Email地址、信用卡信息等），它仅能用来分析数据，统统是修改模块允许使用者基于正则表达式修改相关的请求和应答消息。（5）攻击模块用来读取前面扫描获取的扫描信息，然后试图通过该类模块中的各种插件来攻击安全漏洞，例如：sql_webshell、advshell、sqlmap、xssbeef、remote file include shell、os command shell等。3.W3AF使用]]></content>
+      <categories>
+        <category>Metasploit魔鬼训练营笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Metasploit-6-1 Web应用渗透之基础知识与Wmap扫描操作]]></title>
+    <url>%2F2019%2F04%2F20%2FMetasploit-6-1%2F</url>
+    <content type="text"><![CDATA[一、web应用渗透技术基础知识二、web应用攻击发展趋势三、owasp Web漏洞 TOP 101.SQL注入攻击2.跨站脚本3.跨站伪造请求4.会话认证管理缺陷5.安全误配置6.不安全密码存储7.不安全的对象参考8.限制URL访问失败9.缺乏传输层保护10.未验证的重定向和跳转四、web应用攻击典型案例 五、基于metasploit框架的web应用渗透技术1.辅助模块metasploit的辅助模块基本都在modules/auxiliary/下。web应用辅助扫描、漏洞查找等模块。（1）wmap web扫描器0x01 wmap简介Wmap本身不是一个独立的漏洞扫描器，而是作为Metasploit的一个模块，结合Web漏洞和Web服务相关的模块协同工作，完成目标服务器的扫描任务，也就是说，如果我们想要使用Wmap模块就需要将它在Metasploit中载入才可以使用。0x02 metasploit数据库准备在运行 Metasploit 终端前，我们需要先启动用于存储扫描结果的数据库服务： service postgresql start 如果是初次使用，需要初始化并启动数据库： msfdb init msfdb start 0x03 Wmap使用首先打开一个终端，启动Metasploit: msfconsole 然后等待msf打开之后，我们在msf中载入wmap的插件: load wmap 0x04 wmap渗透测试实验环境：攻击主机：kali linux 2019.1靶机：www.dvssc.com(10.10.10.129) msf5 &gt; load wmap .-.-.-..-.-.-..---..---. | | | || | | || | || |-&apos; `-----&apos;`-&apos;-&apos;-&apos;`-^-&apos;`-&apos; [WMAP 1.5.1] === et [ ] metasploit.com 2012 [*] Successfully loaded plugin: wmap msf5 &gt; help wmap Commands ============= Command Description ------- ----------- wmap_modules Manage wmap modules wmap_nodes Manage nodes wmap_run Test targets wmap_sites Manage sites wmap_targets Manage targets wmap_vulns Display web vulns msf5 &gt; wmap_sites -a http://10.10.10.129 (1) [*] Site created. msf5 &gt; wmap_sites -l (2) [*] Available sites =============== Id Host Vhost Port Proto # Pages # Forms -- ---- ----- ---- ----- ------- ------- 0 10.10.10.129 10.10.10.129 80 http 0 0 通过命令添加要扫描的网站（1）查看扫描的targest（2） msf5 &gt; wmap_targets -t http://10.10.10.129 （3） msf5 &gt; wmap_run -t （4） [*] Testing target: [*] Site: 10.10.10.129 (10.10.10.129) [*] Port: 80 SSL: false ============================================================ [*] Testing started. 2019-03-26 03:59:14 -0400 [*] Loading wmap modules... [*] 39 wmap enabled modules loaded. [*] =[ SSL testing ]= ============================================================ [*] Target is not SSL. SSL modules disabled. [*] =[ Web Server testing ]= ............................................skip 添加网站作为扫描目标（3），同时查看哪些模块将会在扫描中使用（4） msf5 &gt; wmap_run -e （5） [+] 10.10.10.129:80 Apache/2.2.14 (Ubuntu) mod_mono/2.4.3 PHP/5.3.2-1ubuntu4.5 with Suhosin-Patch mod_python/3.3.1 Python/2.6.5 mod_perl/2.0.4 Perl/v5.10.1 （6） [+] Contents of Robots.txt: （7） User-agent: * Disallow: /administrator/ Disallow: /cache/ msf5 &gt; vulns (8) Vulnerabilities =============== Timestamp Host Name References --------- ---- ---- ---------- 2019-03-26 08:01:35 UTC 10.10.10.129 HTTP Trace Method Allowed CVE-2005-3398,CVE-2005-3498,OSVDB-877,BID-11604,BID-9506,BID-9561 查看wmap扫描结果并进行攻击（5）看到目标服务器的旗标等信息（6），同时找到服务器敏感信息（7），最后通过vulns显示扫描出来的漏洞信息（8）]]></content>
+      <categories>
+        <category>Metasploit魔鬼训练营笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Metasploit-5 问题答疑]]></title>
+    <url>%2F2019%2F04%2F20%2FMetasploit-5%2F</url>
+    <content type="text"><![CDATA[1.网站防火security2.firefox浏览器弹窗设置…………….]]></content>
+      <categories>
+        <category>Metasploit魔鬼训练营笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Metasploit-4 Web应用漏扫注入工具与Msf数据共享功能]]></title>
+    <url>%2F2019%2F04%2F20%2FMetasploit-4%2F</url>
+    <content type="text"><![CDATA[1.漏洞扫描（1）openvas类似于nessus漏洞扫描器功能：识别远程主机、web应用存在的各种漏洞。2.web应用漏洞扫描、渗透测试软件的接口（1）W3AF 功能：综合性web应用扫描和审计工具 （2）SQLMap 功能：SQL注入和攻击工具 （3）wXf（找不到了） 功能：开源web渗透测试框架 （4）XSSF 功能：跨站脚本攻击框架 （5）BeEF** 功能；浏览器攻击平台框架3.开源web应用漏洞扫描工具（1）2.渗透测试信息数据库与共享功能和具体使用步骤参考metasploit魔鬼训练p134]]></content>
+      <categories>
+        <category>Metasploit魔鬼训练营笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Metasploit-2 Nmap扫描原理及口令猜测与嗅探]]></title>
+    <url>%2F2019%2F04%2F20%2FMetasploit-2%2F</url>
+    <content type="text"><![CDATA[一、.主机探测与端口扫描活跃主机扫描，指已连接到网络上、处于运行状态且网络功能正常的主机。1.ICMP ping -c 次数 目的ip地址2.metasploit的主机发现模块（1）arp_sweep //地址解析协议定义，ip地址转化为MAC地址，进行广播udp_sweepARP扫描器use auxiliary/scanner/discovery/arp_sweep ; show options ; set RHOSTS 10.10.10.0/24 ; set THTEADS 50 ; set INTERFACE 网卡名称 ; run(2)Nmap进行主机探测nmap -sP ip地址 //同通过发送ICMP echo请求探测主机是否存活原理通ping-sT TCP connect 扫描，类似Metasploit中的tcp扫描模块-sS TCP SYN扫描 类似Metasploit中的syn扫描模块-sF/-sX/-sN 这些扫描通过发送一些特殊标志位以避开设备或软件的检测-sU 探测目标主机开放了哪些UDP端口-Pn 在扫描之前，不发送ICMP echo 请求测试目标是否活跃-O 启用对于TCP/IP协议栈的指纹特征获取远程主机的操作系统类型等信息更加详细见nmap探测原理.pdf 二、口令猜测与嗅探1.攻击SSH服务需要好的用户名和口令字典（1）use auxiliary/scanner/ssh/ssh_login ; set RHOSTS 10.10.10.2544 ; set USERNAME root ;set PASS_FILE /root/words.txt ; set THREADS 50 ; run（2）session -l查看获得权限的主机名称 ； seeion -i 编号 取得shell2.psnuffle口令嗅探获取FTP明文登陆口令use auxiliary/sniffer/psnuffle ; run]]></content>
+      <categories>
+        <category>Metasploit魔鬼训练营笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Metasploit-3 网络漏洞扫描之Openvas环境搭建与使用]]></title>
+    <url>%2F2019%2F04%2F20%2FMetasploit-3%2F</url>
+    <content type="text"><![CDATA[一、漏洞扫描前期知识点梳理1.通过网络对目标进行搜集主要技术有主机探测与端口扫描、服务扫描与查点与网络漏洞扫描等，最强大的开源网络扫描软件为Nmap和OpenVAS，都可以集成到metasploit框架中。 2.metasploit提供了丰富网络扫描、服务扫描、查点功能 3.metasploit提供了对postgresql数据库的支持，能够存储渗透测试过程中搜集目标网络情报信息，为渗透测试的威胁建模、漏洞分析、渗透攻击与报告撰写等阶段提供数据支持，并支持数据库共享与MSF RPC服务两种方式在渗透测试团队之间共享信息。4.黑盒扫描、白盒扫描 二、openVAS漏洞扫描器介绍与环境搭建1.功能类似于nuessus的综合型漏洞扫描器，可以用来识别主机、web应用存在的各种漏洞。opoenvas环境搭建过程2.主要功能模块 3.openvas安装（1）apt install openvas（2）重置密码openvasmd –user=admin –new-password=hahaha（3）openva-start开启openvas（4）openvas-check-setup检查openvas配置是否正确4.openvas简单漏扫步骤 0x01 建立一个扫描目标0x02 建立一个新的扫描任务 建立完扫描目标之后，需要建立扫描任务关联扫描目标。 建立扫描任务有两种方式： ① 可以使用任务向导进行任务的创建，任务向导可以快速的建立并开启一个扫描任务；高级任务向导有更详细的选项，如登录凭证之类的信息；修改任务向导可以快速的选择之前创建的任务重新创建任务开启扫描。任务向导中没有填写的选项都按照设置（Extras→My Settings）的默认配置进行扫描任务配置。② 可以通过星型图标新建任务创建扫描任务，内容较详细。0x03 扫描测试扫描机：kali-2019.1靶机：metasploit魔鬼训练营dvssc网络环境扫描结果：]]></content>
+      <categories>
+        <category>Metasploit魔鬼训练营笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Metasploit-1 公开信息收集]]></title>
+    <url>%2F2019%2F04%2F20%2FMetasploit-1%2F</url>
+    <content type="text"><![CDATA[一、web应用渗透技术基础知识二、web应用攻击发展趋势三、owasp Web漏洞 TOP 101.SQL注入攻击2.跨站脚本3.跨站伪造请求4.会话认证管理缺陷5.安全误配置6.不安全密码存储7.不安全的对象参考8.限制URL访问失败9.缺乏传输层保护10.未验证的重定向和跳转四、web应用攻击典型案例 五、基于metasploit框架的web应用渗透技术1.辅助模块metasploit的辅助模块基本都在modules/auxiliary/下。web应用辅助扫描、漏洞查找等模块。（1）wmap web扫描器0x01 wmap简介Wmap本身不是一个独立的漏洞扫描器，而是作为Metasploit的一个模块，结合Web漏洞和Web服务相关的模块协同工作，完成目标服务器的扫描任务，也就是说，如果我们想要使用Wmap模块就需要将它在Metasploit中载入才可以使用。0x02 metasploit数据库准备在运行 Metasploit 终端前，我们需要先启动用于存储扫描结果的数据库服务： service postgresql start 如果是初次使用，需要初始化并启动数据库： msfdb init msfdb start 0x03 Wmap使用首先打开一个终端，启动Metasploit: msfconsole 然后等待msf打开之后，我们在msf中载入wmap的插件: load wmap 0x04 wmap渗透测试实验环境：攻击主机：kali linux 2019.1靶机：www.dvssc.com(10.10.10.129) msf5 &gt; load wmap]]></content>
+      <categories>
+        <category>Metasploit魔鬼训练营笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Sqlmap-1 基础使用操作]]></title>
+    <url>%2F2019%2F04%2F19%2Fsqlmap-1%2F</url>
+    <content type="text"><![CDATA[sqlmap使用教程 1.检测注入点是否可用sqlmap.py -u “url”-u 输入指定注入点url 2.若需要用户输入[y/n]，系默认需添加一个参数sqlmap.py -u “url” –batch注入结果显示(1)注入参数id为GET注入，注入类型有四种分别为boolean-based、error-based、time-based blind、union query(2)web服务器系统为linux-centOS 7-1708(3)web应用技术为 apache 2.4.6 php 5.4.16(4)数据库类型为mysql 5 3.爆库一条命令即可爆出该sqlserver所有数据库名称sqlmap.py -u “url” –dbs 4.web使用当前的数据库sqlmap.py -u “url” –current-db 5.web数据库使用账户sqlmap.py -u “url” –current-user 6.列出mysql所有用户sqlmap.py -u “url” –users 7.数据库账户与密码sqlmap.py -u “url” –password 8.列出数据库中的表sqlmap.py -u “url” -D 数据库名称 –tables参数：-D：指定数据库名称–tables：列出表 9.列出表中的字段sqlmap.py -u “url” -D 数据库名称 -T 表名称 –columns参数：-D：指定数据库名称-T：指定要列出字段的表–columns：指定列出字段 10.爆字段内容sqlmap.py -u “url” -D 数据库名称 -T 表名称 -C 字段名参数：-C：指定要爆的字段–dump：将结果盗出 11.如果字段内容太多，需要花费很多时间。可以指定导出特定范围的字段内容，命令如下：sqlmap.py -u “url” -D 数据库名称 -T 表名称 -C 字段名 –start 1 –stop 10 –dump参数：–start：指定开始的行–stop：指定结束的行]]></content>
+      <categories>
+        <category>Sqlmap的使用</category>
+      </categories>
+  </entry>
+</search>
