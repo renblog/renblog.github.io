@@ -80,12 +80,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="ren.bolg">
+<meta property="og:title" content="ren.blog">
 <meta property="og:url" content="http://www.rlovey.fun/page/2/index.html">
-<meta property="og:site_name" content="ren.bolg">
+<meta property="og:site_name" content="ren.blog">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ren.bolg">
+<meta name="twitter:title" content="ren.blog">
 
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <title>ren.bolg</title>
+  <title>ren.blog</title>
   
 
 
@@ -152,7 +152,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">ren.bolg</span>
+        <span class="site-title">ren.blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -300,7 +300,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ren.bolg">
+      <meta itemprop="name" content="ren.blog">
     </span>
 
     
@@ -383,21 +383,15 @@
 
       
         
-          
-            <p>一、web应用渗透技术基础知识<br>二、web应用攻击发展趋势<br>三、owasp Web漏洞 TOP 10<br>1.SQL注入攻击<br>2.跨站脚本<br>3.跨站伪造请求<br>4.会话认证管理缺陷<br>5.安全误配置<br>6.不安全密码存储<br>7.不安全的对象参考<br>8.限制URL访问失败<br>9.缺乏传输层保护<br>10.未验证的重定向和跳转<br>四、web应用攻击典型案例</p>
-<h2 id="五、基于metasploit框架的web应用渗透技术"><a href="#五、基于metasploit框架的web应用渗透技术" class="headerlink" title="五、基于metasploit框架的web应用渗透技术"></a><strong>五、基于metasploit框架的web应用渗透技术</strong></h2><p><strong>1.辅助模块</strong><br>metasploit的辅助模块基本都在modules/auxiliary/下。web应用辅助扫描、漏洞查找等模块。<br><strong>（1）wmap web扫描器</strong><br><strong>0x01  wmap简介</strong><br>Wmap本身不是一个独立的漏洞扫描器，而是作为Metasploit的一个模块，结合Web漏洞和Web服务相关的模块协同工作，完成目标服务器的扫描任务，也就是说，如果我们想要使用Wmap模块就需要将它在Metasploit中载入才可以使用。<br><strong>0x02  metasploit数据库准备</strong><br>在运行 Metasploit 终端前，我们需要先启动用于存储扫描结果的数据库服务：</p>
-<pre><code>service postgresql start
-</code></pre><p>如果是初次使用，需要初始化并启动数据库：</p>
-<pre><code>msfdb init
-msfdb start
-</code></pre><p><strong>0x03 Wmap使用</strong><br>首先打开一个终端，启动Metasploit:</p>
-<pre><code>msfconsole
-</code></pre><p>  然后等待msf打开之后，我们在msf中载入wmap的插件:</p>
-<pre><code>load wmap
-</code></pre><p><strong>0x04  wmap渗透测试</strong><br>实验环境：<br>攻击主机：kali linux 2019.1<br>靶机：<a href="http://www.dvssc.com(10.10.10.129)" target="_blank" rel="noopener">www.dvssc.com(10.10.10.129)</a></p>
-<pre><code>msf5 &gt; load wmap
-</code></pre>
-          
+          <p>一、web应用渗透技术基础知识<br>二、web应用攻击发展趋势<br>三、owasp Web漏洞 TOP 10<br>1.SQL注入攻击<br>2.跨站脚本<br>3.跨站伪造请求<br>4.会话认证管理缺陷<br>5.安全误配置<br>6.不安全密码存储<br>7.不安全的对象参考<br>8.限制URL访问失败<br>9.缺乏传输层保护<br>10.未验证的重定向和跳转<br>四、web应用攻击典型案例</p>
+<h2 id="五、基于metasploit框架的web应用渗透技术"><a href="#五、基于metasploit框架的web应用渗透技术" class="headerlink" title="五、基于metasploit框架的web应用渗透技术"></a><strong>五、基于metasploit框架的web应用渗透技术</strong></h2>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/20/Metasploit-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -453,7 +447,7 @@ msfdb start
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ren.bolg">
+      <meta itemprop="name" content="ren.blog">
     </span>
 
     
