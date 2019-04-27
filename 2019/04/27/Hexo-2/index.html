@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="ren.blog">
 <meta property="og:description" content="自己搭建博客的主题设置过程，供大家参考">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T14:55:25.000Z">
+<meta property="og:updated_time" content="2019-04-27T16:24:51.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-2 Hexo主题设置">
 <meta name="twitter:description" content="自己搭建博客的主题设置过程，供大家参考">
@@ -339,8 +339,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-04-27T22:55:25+08:00">
-                2019-04-27
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-28T00:24:51+08:00">
+                2019-04-28
               </time>
             
           </span>
@@ -371,6 +371,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/27/Hexo-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/27/Hexo-2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -378,6 +388,25 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  790
+                </span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -410,6 +439,16 @@
 </ul>
 <h2 id="侧边栏社交小图片设置"><a href="#侧边栏社交小图片设置" class="headerlink" title="侧边栏社交小图片设置"></a>侧边栏社交小图片设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#social: 注释去掉</span><br><span class="line">socia_icons:</span><br><span class="line">  enable: true</span><br><span class="line"></span><br><span class="line">  Github: github</span><br></pre></td></tr></table></figure>
 <h2 id="文章添加更新时间"><a href="#文章添加更新时间" class="headerlink" title="文章添加更新时间"></a>文章添加更新时间</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">updated_at: false </span><br><span class="line">修改为</span><br><span class="line">updated_at: true</span><br></pre></td></tr></table></figure>
+<h2 id="文章字数、阅读时长统计"><a href="#文章字数、阅读时长统计" class="headerlink" title="文章字数、阅读时长统计"></a>文章字数、阅读时长统计</h2><ul>
+<li>安装插件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save hexo-wordcount</span><br></pre></td></tr></table></figure>
+<p>修改_config.yml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">post_wordcount:</span><br><span class="line">  item_text: true</span><br><span class="line">  wordcount: true         # 单篇 字数统计</span><br><span class="line">  min2read: true          # 单篇 阅读时长</span><br><span class="line">  totalcount: false       # 网站 字数统计</span><br><span class="line">  separated_meta: true</span><br></pre></td></tr></table></figure>
+<h2 id="页脚美化"><a href="#页脚美化" class="headerlink" title="页脚美化"></a>页脚美化</h2><ul>
+<li>隐藏网页底部powered By Hexo / 强力驱动</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">copyright: false</span><br></pre></td></tr></table></figure>
 <h1 id="阅读全文"><a href="#阅读全文" class="headerlink" title="阅读全文"></a>阅读全文</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;\!--more--&gt; //没有斜杠</span><br></pre></td></tr></table></figure>
 <h1 id="添加分类"><a href="#添加分类" class="headerlink" title="添加分类"></a>添加分类</h1><ul>
 <li>新建一个分类页面</li>
@@ -466,7 +505,10 @@
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![你想要输入的替代文字](xxxx/图片名.jpg) //路径使用相对路径</span><br></pre></td></tr></table></figure>
-<h1 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">livere_uid: MTAyMC80MzgyNy8yMDM2Mg==</span><br></pre></td></tr></table></figure>
+<h1 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h1><h2 id="方法一-来必力"><a href="#方法一-来必力" class="headerlink" title="方法一: 来必力"></a>方法一: 来必力</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">livere_uid: MTAyMC80MzgyNy8yMDM2Mg==</span><br></pre></td></tr></table></figure>
+<h2 id="方法二：Leancloud"><a href="#方法二：Leancloud" class="headerlink" title="方法二：Leancloud"></a>方法二：Leancloud</h2><ul>
+<li>参考文章链接<br><a href="https://blog.csdn.net/weixin_39345384/article/details/80787998" target="_blank" rel="noopener">https://blog.csdn.net/weixin_39345384/article/details/80787998</a></li>
+</ul>
 <h1 id="添加宠物"><a href="#添加宠物" class="headerlink" title="添加宠物"></a>添加宠物</h1><ul>
 <li>在博客目录下安装依赖</li>
 </ul>
@@ -476,9 +518,9 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#宠物</span><br><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  debug: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-hijiki</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: true</span><br></pre></td></tr></table></figure>
 <ul>
-<li>安装模型包<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install 模型的包名</span><br></pre></td></tr></table></figure>
-</li>
+<li>安装模型包</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install 模型的包名</span><br></pre></td></tr></table></figure>
 <p>参考链接：<br><a href="https://blog.csdn.net/qq_43020645/article/details/82794092" target="_blank" rel="noopener">https://blog.csdn.net/qq_43020645/article/details/82794092</a></p>
 <ul>
 <li>取消宠物</li>
@@ -547,9 +589,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzgyNy8yMDM2Mg=="></div>
     </div>
-
   
 
 
@@ -671,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#修改hexo部署端口"><span class="nav-number">1.</span> <span class="nav-text">修改hexo部署端口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#站点-config-yml的修改"><span class="nav-number">2.</span> <span class="nav-text">站点_config.yml的修改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题-config-yml的修改"><span class="nav-number">3.</span> <span class="nav-text">主题_config.yml的修改</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题样式："><span class="nav-number">3.1.</span> <span class="nav-text">next主题样式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#menu菜单"><span class="nav-number">3.2.</span> <span class="nav-text">menu菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头像设置"><span class="nav-number">3.3.</span> <span class="nav-text">头像设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next动态背景"><span class="nav-number">3.4.</span> <span class="nav-text">next动态背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#侧边栏社交小图片设置"><span class="nav-number">3.5.</span> <span class="nav-text">侧边栏社交小图片设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章添加更新时间"><span class="nav-number">3.6.</span> <span class="nav-text">文章添加更新时间</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阅读全文"><span class="nav-number">4.</span> <span class="nav-text">阅读全文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加分类"><span class="nav-number">5.</span> <span class="nav-text">添加分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加标签"><span class="nav-number">6.</span> <span class="nav-text">添加标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加关于标签"><span class="nav-number">7.</span> <span class="nav-text">添加关于标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">8.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo文章加图片"><span class="nav-number">9.</span> <span class="nav-text">hexo文章加图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">10.</span> <span class="nav-text">添加评论功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加宠物"><span class="nav-number">11.</span> <span class="nav-text">添加宠物</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#修改hexo部署端口"><span class="nav-number">1.</span> <span class="nav-text">修改hexo部署端口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#站点-config-yml的修改"><span class="nav-number">2.</span> <span class="nav-text">站点_config.yml的修改</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主题-config-yml的修改"><span class="nav-number">3.</span> <span class="nav-text">主题_config.yml的修改</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#next主题样式："><span class="nav-number">3.1.</span> <span class="nav-text">next主题样式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#menu菜单"><span class="nav-number">3.2.</span> <span class="nav-text">menu菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头像设置"><span class="nav-number">3.3.</span> <span class="nav-text">头像设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next动态背景"><span class="nav-number">3.4.</span> <span class="nav-text">next动态背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#侧边栏社交小图片设置"><span class="nav-number">3.5.</span> <span class="nav-text">侧边栏社交小图片设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章添加更新时间"><span class="nav-number">3.6.</span> <span class="nav-text">文章添加更新时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章字数、阅读时长统计"><span class="nav-number">3.7.</span> <span class="nav-text">文章字数、阅读时长统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页脚美化"><span class="nav-number">3.8.</span> <span class="nav-text">页脚美化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#阅读全文"><span class="nav-number">4.</span> <span class="nav-text">阅读全文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加分类"><span class="nav-number">5.</span> <span class="nav-text">添加分类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加标签"><span class="nav-number">6.</span> <span class="nav-text">添加标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加关于标签"><span class="nav-number">7.</span> <span class="nav-text">添加关于标签</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加搜索功能"><span class="nav-number">8.</span> <span class="nav-text">添加搜索功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo文章加图片"><span class="nav-number">9.</span> <span class="nav-text">hexo文章加图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加评论功能"><span class="nav-number">10.</span> <span class="nav-text">添加评论功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法一-来必力"><span class="nav-number">10.1.</span> <span class="nav-text">方法一: 来必力</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法二：Leancloud"><span class="nav-number">10.2.</span> <span class="nav-text">方法二：Leancloud</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加宠物"><span class="nav-number">11.</span> <span class="nav-text">添加宠物</span></a></li></ol></div>
             
 
           </div>
@@ -701,11 +741,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
-
-
-  <span class="post-meta-divider">|</span>
 
 
 
@@ -857,26 +893,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '8giMrXTEUVGGSKAeimuxTmMn-gzGzoHsz',
+        appKey: 'GbBFYJ3DKzUPO1pz2615KRxw',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
