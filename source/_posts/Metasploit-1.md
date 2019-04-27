@@ -20,7 +20,7 @@ categories: Metasploit魔鬼训练营笔记
 四、web应用攻击典型案例
 
 ## **五、基于metasploit框架的web应用渗透技术**
-
+<!--more-->
 **1.辅助模块**
 metasploit的辅助模块基本都在modules/auxiliary/下。web应用辅助扫描、漏洞查找等模块。
 **（1）wmap web扫描器**

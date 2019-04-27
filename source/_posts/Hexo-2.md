@@ -3,6 +3,8 @@ title: Hexo-2 Hexo主题设置
 date: 2019-04-27 17:26:50
 categories: Hexo 搭建心得
 ---
+自己搭建博客的主题设置过程，供参考
+<!--more-->
 # 修改hexo部署端口
 hexo server -p 80
 
