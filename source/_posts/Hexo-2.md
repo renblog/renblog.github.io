@@ -3,12 +3,12 @@ title: Hexo-2 Hexo主题设置
 date: 2019-04-27 17:26:50
 categories: Hexo 搭建心得
 ---
-自己搭建博客的主题设置过程，供参考
+自己搭建博客的主题设置过程，供大家参考
 <!--more-->
 # 修改hexo部署端口
 hexo server -p 80
 
-## 站点_config.yml的修改
+# 站点_config.yml的修改
 
 - 基本信息
 - 语言
@@ -17,23 +17,23 @@ lanuage: zh-Hans
 
 
  
- ## 主题_config.yml的修改
- ### next主题样式：
+ # 主题_config.yml的修改
+ ## next主题样式：
   scheme: Gemini
- ### menu菜单
+ ## menu菜单
   home: / || home
   about: /about/ || user
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive  
- ### 头像设置
+ ## 头像设置
   avata:
   /images/cat.gif
 
-### next动态背景
+## next动态背景
 - 搜索canvas_nest: true
 
-### 侧边栏社交小图片设置
+## 侧边栏社交小图片设置
 
 ```
 #social: 注释去掉
@@ -44,13 +44,13 @@ socia_icons:
   
 ```
 
-## 阅读全文
+# 阅读全文
 
 ```
  <\!--more--> //没有斜杠
 ```
 
-## 添加分类
+# 添加分类
  
 - 新建一个分类页面
 
@@ -73,7 +73,7 @@ title: 分类测试文章标题
 categories: 分类名
 
 
-## 添加标签
+# 添加标签
 
 - 新建一个标签页面
 
@@ -98,7 +98,7 @@ tags:
    -（空格）标签1
    -（空格）标签2
   
-## 添加关于标签
+# 添加关于标签
 - 新建一个关于页面
 
 ```
@@ -106,7 +106,7 @@ hexo new page about
 ```
 - source文件夹下有了about/index.md
 index.md文件即可编辑关于你的信息
-## 添加搜索功能
+# 添加搜索功能
 - 安装 hexo-generator-searchdb 插件
 
 ```
@@ -125,7 +125,7 @@ search:
 ```
 - 打开 主题配置文件 找到Local search，将enable设置为true
 
-## hexo文章加图片
+# hexo文章加图片
 - 首先把修改站点_config.yml
 
 ```
@@ -145,12 +145,12 @@ npm install hexo-asset-image --save
 ```
 ![你想要输入的替代文字](xxxx/图片名.jpg) //路径使用相对路径
 ```
-## 添加评论功能
+# 添加评论功能
 
 ```
 livere_uid: MTAyMC80MzgyNy8yMDM2Mg==
 ```
-## 添加宠物
+# 添加宠物
 - 在博客目录下安装依赖
 
 ```
