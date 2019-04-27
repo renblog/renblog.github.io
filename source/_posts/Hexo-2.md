@@ -43,6 +43,13 @@ socia_icons:
   Github: github
   
 ```
+## 文章添加更新时间
+
+```
+ updated_at: false 
+ 修改为
+ updated_at: true
+```
 
 # 阅读全文
 
