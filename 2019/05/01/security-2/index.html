@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="security-2 面试题目整理-2categories: 网络安全笔记关于5月份公司招聘的一些面试题目供自己预习学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="security-2 应聘一些题目整理-1">
+<meta property="og:url" content="http://www.rlovey.fun/2019/05/01/security-2/index.html">
+<meta property="og:site_name" content="ren.blog">
+<meta property="og:description" content="security-2 面试题目整理-2categories: 网络安全笔记关于5月份公司招聘的一些面试题目供自己预习学习">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-01T07:33:24.811Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="security-2 应聘一些题目整理-1">
+<meta name="twitter:description" content="security-2 面试题目整理-2categories: 网络安全笔记关于5月份公司招聘的一些面试题目供自己预习学习">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.rlovey.fun/2019/05/01/security-2/">
+
+
+
+
+
+  <title>security-2 应聘一些题目整理-1 | ren.blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ren.blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.rlovey.fun/2019/05/01/security-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="任小昊">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/cat.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ren.blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">security-2 应聘一些题目整理-1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-01T15:23:34+08:00">
+                2019-05-01
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-01T15:33:24+08:00">
+                2019-05-01
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络安全笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">网络安全笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/01/security-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/01/security-2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.9k
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>security-2 面试题目整理-2<br>categories: 网络安全笔记<br>关于5月份公司招聘的一些面试题目<br>供自己预习学习<br><a id="more"></a></p>
+<h1 id="SDL"><a href="#SDL" class="headerlink" title="SDL"></a>SDL</h1><h1 id="缓冲区溢出的防护措施"><a href="#缓冲区溢出的防护措施" class="headerlink" title="缓冲区溢出的防护措施"></a>缓冲区溢出的防护措施</h1><h1 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h1><p>RSA加密算法：理论上不能被破解<br>DES: 目前还没有攻破3DES<br>AES: 替代原先的DES加密<br>BNS: </p>
+<h1 id="防止Session-Cookie被跨站脚本执行漏洞"><a href="#防止Session-Cookie被跨站脚本执行漏洞" class="headerlink" title="防止Session Cookie被跨站脚本执行漏洞"></a>防止Session Cookie被跨站脚本执行漏洞</h1><p>参考网站：<a href="https://www.cnblogs.com/forwill/p/6181984.html" target="_blank" rel="noopener">https://www.cnblogs.com/forwill/p/6181984.html</a></p>
+<h2 id="secure"><a href="#secure" class="headerlink" title="secure"></a>secure</h2><ul>
+<li>secure属性：一个cookie被设置了secure=true，那么这个cookie只能用https协议发送给服务器，http协议不发送。cookie在https的情况下创建的，而且他的Secure=true，之后你一直用https访问其他的页面（比如登录之后点击其他子页面，单点登陆），cookie会被发送到服务器，你无需重新登录就可以跳转到其他页面。如果这是你把url改成http协议访问其他页面，你就需要重新登录了，因为这个cookie不能在http协议中发送。</li>
+</ul>
+<h2 id="httponly"><a href="#httponly" class="headerlink" title="httponly"></a>httponly</h2><ul>
+<li>在cookie中设置了HttpOnly属性，通过js脚本将无法读取到cookie信息，这样能有效的防止XSS攻击。</li>
+</ul>
+<h2 id="将session加密"><a href="#将session加密" class="headerlink" title="将session加密"></a>将session加密</h2><h2 id="多个session标记"><a href="#多个session标记" class="headerlink" title="多个session标记"></a>多个session标记</h2><h1 id="Android逆向分析工具"><a href="#Android逆向分析工具" class="headerlink" title="Android逆向分析工具"></a>Android逆向分析工具</h1><h2 id="Drozer"><a href="#Drozer" class="headerlink" title="Drozer"></a>Drozer</h2><p>参考链接：<a href="https://wenku.baidu.com/view/f70797ab6137ee06eff91870.html" target="_blank" rel="noopener">https://wenku.baidu.com/view/f70797ab6137ee06eff91870.html</a></p>
+<h2 id="反编译回编译"><a href="#反编译回编译" class="headerlink" title="反编译回编译"></a>反编译回编译</h2><p>参考链接：<a href="https://blog.csdn.net/qq_37422933/article/details/81356737#" target="_blank" rel="noopener">https://blog.csdn.net/qq_37422933/article/details/81356737#</a></p>
+<h2 id="APKTool"><a href="#APKTool" class="headerlink" title="APKTool"></a>APKTool</h2><p>APKTool是GOOGLE提供的APK编译工具，能够反编译及回编译apk，同时安装反编译系统apk所需要的framework-res框架，清理上次反编译文件夹等功能。需要java支持</p>
+<h2 id="Android-Killer"><a href="#Android-Killer" class="headerlink" title="Android Killer"></a>Android Killer</h2><p>Android Killer 是一款可视化的安卓应用逆向工具，集Apk反编译、Apk打包、Apk签名，编码互转，ADB通信（应用安装-卸载-运行-设备文件管理）等特色功能于一 身，支持logcat日志输出，语法高亮，基于关键字（支持单行代码或多行代码段）项目内搜索，可自定义外部工具；吸收融汇多种工具功能与特点，打造一站 式逆向工具操作体验，大大简化了用户在安卓应用/游戏修改过程中的各类繁琐工作。<br>参考链接：<a href="http://doc.okbase.net/guiguzi1110/archive/119043.html" target="_blank" rel="noopener">http://doc.okbase.net/guiguzi1110/archive/119043.html</a></p>
+<h1 id="JEB"><a href="#JEB" class="headerlink" title="JEB"></a>JEB</h1><h1 id="PKI管理对象"><a href="#PKI管理对象" class="headerlink" title="PKI管理对象"></a>PKI管理对象</h1><ul>
+<li>证书、密钥、证书撤销</li>
+</ul>
+<h1 id="往年攻击"><a href="#往年攻击" class="headerlink" title="往年攻击"></a>往年攻击</h1><h2 id="xcodeghost"><a href="#xcodeghost" class="headerlink" title="xcodeghost"></a>xcodeghost</h2><h2 id="wormhole"><a href="#wormhole" class="headerlink" title="wormhole"></a>wormhole</h2><p>参考链接：<a href="https://bbs.kafan.cn/thread-1862013-1-1.html" target="_blank" rel="noopener">https://bbs.kafan.cn/thread-1862013-1-1.html</a></p>
+<h2 id="心脏滴血"><a href="#心脏滴血" class="headerlink" title="心脏滴血"></a>心脏滴血</h2><h2 id="shellshock"><a href="#shellshock" class="headerlink" title="shellshock"></a>shellshock</h2><p>参考链接：<a href="https://blog.csdn.net/Anprou/article/details/72819989" target="_blank" rel="noopener">https://blog.csdn.net/Anprou/article/details/72819989</a></p>
+<h1 id="Hook"><a href="#Hook" class="headerlink" title="Hook"></a>Hook</h1><h1 id="常用的逆向分析工具"><a href="#常用的逆向分析工具" class="headerlink" title="常用的逆向分析工具"></a>常用的逆向分析工具</h1><h2 id="IDA-Pro"><a href="#IDA-Pro" class="headerlink" title="IDA Pro"></a>IDA Pro</h2><p>交互式反汇编器专业版（Interactive Disassembler Professional），人们常称其为IDA Pro，或简称为IDA。是目前最棒的一个静态反编译软件，为众多0day世界的成员和ShellCode安全分析人士不可缺少的利器！IDA Pro是一款交互式的，可编程的，可扩展的，多处理器的，交叉Windows或Linux WinCE MacOS平台主机来分析程序， 被公认为最好的花钱可以买到的逆向工程利器。IDA Pro已经成为事实上的分析敌意代码的标准并让其自身迅速成为攻击研究领域的重要工具。它支持数十种CPU指令集其中包括Intel x86，x64，MIPS，PowerPC，ARM，Z80，68000，c8051等等。</p>
+<h2 id="WinDBG"><a href="#WinDBG" class="headerlink" title="WinDBG"></a>WinDBG</h2><p>调试应用程序的工具</p>
+<h2 id="OLLYDBG"><a href="#OLLYDBG" class="headerlink" title="OLLYDBG"></a>OLLYDBG</h2><p>参考链接：<a href="https://baike.baidu.com/item/OLLYDBG/4039151?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/OLLYDBG/4039151?fr=aladdin</a></p>
+<h1 id="下面哪个是加壳工具"><a href="#下面哪个是加壳工具" class="headerlink" title="下面哪个是加壳工具"></a>下面哪个是加壳工具</h1><p>加壳：其实是利用特殊的算法，对可执行文件里的资源进行压缩，只不过这个压缩之后的文件，可以独立运行，解压过程完全隐蔽，都在内存中完成。它们附加在原程序上通过加载器载入内存后，先于原始程序执行，得到控制权，执行过程中对原始程序进行解密、还原，还原完成后再把控制权交还给原始程序，执行原来的代码部分。加上外壳后，原始程序代码在磁盘文件中一般是以加密后的形式存在的，只在执行时在内存中还原，这样就可以比较有效地防止破解者对程序文件的非法修改，同时也可以防止程序被静态反编译。</p>
+<h2 id="upx"><a href="#upx" class="headerlink" title="upx"></a>upx</h2><h2 id="ASPack脱壳工具"><a href="#ASPack脱壳工具" class="headerlink" title="ASPack脱壳工具"></a>ASPack脱壳工具</h2><h2 id="VMProtect"><a href="#VMProtect" class="headerlink" title="VMProtect"></a>VMProtect</h2><h1 id="Android应用程序的结构包括哪些"><a href="#Android应用程序的结构包括哪些" class="headerlink" title="Android应用程序的结构包括哪些"></a>Android应用程序的结构包括哪些</h1><h1 id="android-NDK"><a href="#android-NDK" class="headerlink" title="android NDK"></a>android NDK</h1><h1 id="IIS状态码"><a href="#IIS状态码" class="headerlink" title="IIS状态码"></a>IIS状态码</h1><h1 id="关于PKI-CA证书"><a href="#关于PKI-CA证书" class="headerlink" title="关于PKI/CA证书"></a>关于PKI/CA证书</h1><p>证书上具有证书授权中心的数字签名<br>拥有者的基本信息，公开密钥，</p>
+<h1 id="根本上反域CSRF漏洞"><a href="#根本上反域CSRF漏洞" class="headerlink" title="根本上反域CSRF漏洞"></a>根本上反域CSRF漏洞</h1><p>验证referer，cookie，增加tooken</p>
+<h1 id="Android常见风险"><a href="#Android常见风险" class="headerlink" title="Android常见风险"></a>Android常见风险</h1><h2 id="组件安全"><a href="#组件安全" class="headerlink" title="组件安全"></a>组件安全</h2><h2 id="数据存储安全"><a href="#数据存储安全" class="headerlink" title="数据存储安全"></a>数据存储安全</h2><h2 id="数据传输安全"><a href="#数据传输安全" class="headerlink" title="数据传输安全"></a>数据传输安全</h2><h2 id="漏洞"><a href="#漏洞" class="headerlink" title="漏洞"></a>漏洞</h2><h1 id="SDL安全开发流程"><a href="#SDL安全开发流程" class="headerlink" title="SDL安全开发流程"></a>SDL安全开发流程</h1><p>参考链接：<a href="https://blog.csdn.net/xinyi0622/article/details/73882559/" target="_blank" rel="noopener">https://blog.csdn.net/xinyi0622/article/details/73882559/</a></p>
+<h2 id="培训"><a href="#培训" class="headerlink" title="培训"></a>培训</h2><h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><h2 id="质量门-bug栏"><a href="#质量门-bug栏" class="headerlink" title="质量门/bug栏"></a>质量门/bug栏</h2><h2 id="安全和风险评估"><a href="#安全和风险评估" class="headerlink" title="安全和风险评估"></a>安全和风险评估</h2><h2 id="安全和隐私风险评估"><a href="#安全和隐私风险评估" class="headerlink" title="安全和隐私风险评估"></a>安全和隐私风险评估</h2><h1 id="反序列化"><a href="#反序列化" class="headerlink" title="反序列化"></a>反序列化</h1><p>参考链接：<br><a href="https://www.jianshu.com/p/6219d8024d2c" target="_blank" rel="noopener">https://www.jianshu.com/p/6219d8024d2c</a></p>
+<h1 id="魔术引号"><a href="#魔术引号" class="headerlink" title="魔术引号"></a>魔术引号</h1><p>魔术引号（Magic Quote）是一个自动将进入PHP脚本的数据进行转义的过程。最好在编码时不要转义而在运行时根据需要而转义</p>
+<h1 id="0day"><a href="#0day" class="headerlink" title="0day"></a>0day</h1><h1 id="1day"><a href="#1day" class="headerlink" title="1day"></a>1day</h1><p>安全补丁用来修复安全漏洞保护最终用户不受安全威胁。但是公开补丁其实也会带来安全风险。这就是1day</p>
+<h1 id="堆叠注入"><a href="#堆叠注入" class="headerlink" title="堆叠注入"></a>堆叠注入</h1><p>参考链接：<a href="https://www.cnblogs.com/0nth3way/articles/7128189.html" target="_blank" rel="noopener">https://www.cnblogs.com/0nth3way/articles/7128189.html</a></p>
+<h1 id="填充提示漏洞"><a href="#填充提示漏洞" class="headerlink" title="填充提示漏洞"></a>填充提示漏洞</h1><h1 id="If-Modified-Since和If-None-Match"><a href="#If-Modified-Since和If-None-Match" class="headerlink" title="If-Modified-Since和If-None-Match"></a>If-Modified-Since和If-None-Match</h1><p>参考链接：<a href="https://blog.csdn.net/lhl1124281072/article/details/80067764" target="_blank" rel="noopener">https://blog.csdn.net/lhl1124281072/article/details/80067764</a><br>参考链接：<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/If-None-Match" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/If-None-Match</a></p>
+<h1 id="NSA武器库"><a href="#NSA武器库" class="headerlink" title="NSA武器库"></a>NSA武器库</h1><h2 id="explorer-exe"><a href="#explorer-exe" class="headerlink" title="explorer.exe"></a>explorer.exe</h2><p>参考链接：<br><a href="https://baike.baidu.com/item/explorer.exe/1825316" target="_blank" rel="noopener">https://baike.baidu.com/item/explorer.exe/1825316</a></p>
+<h1 id="反病毒沙盒"><a href="#反病毒沙盒" class="headerlink" title="反病毒沙盒"></a>反病毒沙盒</h1><p>沙盒原理是一种类似于影子系统的，比带有宿主的虚拟机更深层的系统内核级技术。它可以接管病毒调用接口或函数的行为。并会在确认病毒行为后实行回滚机制，让系统复原。<br>沙盒原理也叫沙箱，英文sandbox。在计算机领域指一种虚拟技术，且多用于计算机安全技术。安全软件可以先让它在沙盒中运行，如果含有恶意行为，则禁止程序的进一步运行，而这不会对系统造成任何危害。</p>
+<h1 id="Hydra-爆破神器"><a href="#Hydra-爆破神器" class="headerlink" title="_Hydra(爆破神器)"></a>_Hydra(爆破神器)</h1><p>参考链接：<a href="https://www.cnblogs.com/zoushou/p/4126400.html" target="_blank" rel="noopener">https://www.cnblogs.com/zoushou/p/4126400.html</a></p>
+<h1 id="域渗透"><a href="#域渗透" class="headerlink" title="域渗透"></a>域渗透</h1><p>参考链接：<a href="https://blog.csdn.net/Fly_hps/article/details/80636855" target="_blank" rel="noopener">https://blog.csdn.net/Fly_hps/article/details/80636855</a></p>
+<h2 id="kerberos"><a href="#kerberos" class="headerlink" title="kerberos"></a>kerberos</h2><p>Kerberos是一种计算机网络授权协议，用来在非安全网络中，对个人通信以安全的手段进行身份认证。这个词又指麻省理工学院为这个协议开发的一套计算机软件。</p>
+<h2 id="golden-ticket"><a href="#golden-ticket" class="headerlink" title="golden ticket"></a>golden ticket</h2><h1 id="powershell"><a href="#powershell" class="headerlink" title="powershell"></a>powershell</h1><p>参考链接：<a href="https://baijiahao.baidu.com/s?id=1594522197885174841&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1594522197885174841&amp;wfr=spider&amp;for=pc</a></p>
+<h1 id="badusb"><a href="#badusb" class="headerlink" title="badusb"></a>badusb</h1><p>参考链接：<a href="http://www.baike.com/wiki/BadUSB" target="_blank" rel="noopener">http://www.baike.com/wiki/BadUSB</a></p>
+<h1 id="重放攻击"><a href="#重放攻击" class="headerlink" title="重放攻击"></a>重放攻击</h1><p>重放攻击(Replay Attacks)又称重播攻击、回放攻击，是指攻击者发送一个目的主机已接收过的包，来达到欺骗系统的目的，主要用于身份认证过程，破坏认证的正确性。重放攻击可以由发起者，也可以由拦截并重发该数据的敌方进行。攻击者利用网络监听或者其他方式盗取认证凭据，之后再把它重新发给认证服务器。重放攻击在任何网络通过程中都可能发生，是计算机世界黑客常用的攻击方式之一。</p>
+<h1 id="HMAC"><a href="#HMAC" class="headerlink" title="HMAC"></a>HMAC</h1><p>HMAC是密钥相关的哈希运算消息认证码，HMAC运算利用哈希算法，以一个密钥和一个消息为输入，生成一个消息摘要作为输出。</p>
+<h1 id="哪些是CSRF漏洞的防御方案"><a href="#哪些是CSRF漏洞的防御方案" class="headerlink" title="哪些是CSRF漏洞的防御方案?"></a>哪些是CSRF漏洞的防御方案?</h1><p>A 检测HTTPreferer 字段同域<br>B 限制sessioncookie的生命周期<br>C 使用验证码<br>D cookie关键字段设置HttpOnly属性</p>
+<h1 id="以下避免sql注入方法"><a href="#以下避免sql注入方法" class="headerlink" title="以下避免sql注入方法"></a>以下避免sql注入方法</h1><h2 id="mysqli-real-escape-string"><a href="#mysqli-real-escape-string" class="headerlink" title="mysqli_real_escape_string"></a>mysqli_real_escape_string</h2><p>mysql_real_escape_string() 函数转义 SQL 语句中使用的字符串中的特殊字符。</p>
+<h2 id="addslashes"><a href="#addslashes" class="headerlink" title="addslashes()"></a>addslashes()</h2><p>在每个双引号（”）前添加反斜杠：<br><strong> 未完待续 </strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/28/security-1/" rel="next" title="security-1 Xss练习笔记">
+                <i class="fa fa-chevron-left"></i> security-1 Xss练习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/03/security-5/" rel="prev" title="security-5 xss小游戏">
+                security-5 xss小游戏 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/cat.gif" alt="任小昊">
+            
+              <p class="site-author-name" itemprop="name">任小昊</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/renblog" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:ren18231059114@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SDL"><span class="nav-number">1.</span> <span class="nav-text">SDL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#缓冲区溢出的防护措施"><span class="nav-number">2.</span> <span class="nav-text">缓冲区溢出的防护措施</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加密算法"><span class="nav-number">3.</span> <span class="nav-text">加密算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#防止Session-Cookie被跨站脚本执行漏洞"><span class="nav-number">4.</span> <span class="nav-text">防止Session Cookie被跨站脚本执行漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#secure"><span class="nav-number">4.1.</span> <span class="nav-text">secure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#httponly"><span class="nav-number">4.2.</span> <span class="nav-text">httponly</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将session加密"><span class="nav-number">4.3.</span> <span class="nav-text">将session加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多个session标记"><span class="nav-number">4.4.</span> <span class="nav-text">多个session标记</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android逆向分析工具"><span class="nav-number">5.</span> <span class="nav-text">Android逆向分析工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Drozer"><span class="nav-number">5.1.</span> <span class="nav-text">Drozer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反编译回编译"><span class="nav-number">5.2.</span> <span class="nav-text">反编译回编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APKTool"><span class="nav-number">5.3.</span> <span class="nav-text">APKTool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-Killer"><span class="nav-number">5.4.</span> <span class="nav-text">Android Killer</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JEB"><span class="nav-number">6.</span> <span class="nav-text">JEB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PKI管理对象"><span class="nav-number">7.</span> <span class="nav-text">PKI管理对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#往年攻击"><span class="nav-number">8.</span> <span class="nav-text">往年攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xcodeghost"><span class="nav-number">8.1.</span> <span class="nav-text">xcodeghost</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wormhole"><span class="nav-number">8.2.</span> <span class="nav-text">wormhole</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#心脏滴血"><span class="nav-number">8.3.</span> <span class="nav-text">心脏滴血</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shellshock"><span class="nav-number">8.4.</span> <span class="nav-text">shellshock</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hook"><span class="nav-number">9.</span> <span class="nav-text">Hook</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用的逆向分析工具"><span class="nav-number">10.</span> <span class="nav-text">常用的逆向分析工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IDA-Pro"><span class="nav-number">10.1.</span> <span class="nav-text">IDA Pro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WinDBG"><span class="nav-number">10.2.</span> <span class="nav-text">WinDBG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OLLYDBG"><span class="nav-number">10.3.</span> <span class="nav-text">OLLYDBG</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下面哪个是加壳工具"><span class="nav-number">11.</span> <span class="nav-text">下面哪个是加壳工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#upx"><span class="nav-number">11.1.</span> <span class="nav-text">upx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ASPack脱壳工具"><span class="nav-number">11.2.</span> <span class="nav-text">ASPack脱壳工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VMProtect"><span class="nav-number">11.3.</span> <span class="nav-text">VMProtect</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android应用程序的结构包括哪些"><span class="nav-number">12.</span> <span class="nav-text">Android应用程序的结构包括哪些</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#android-NDK"><span class="nav-number">13.</span> <span class="nav-text">android NDK</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IIS状态码"><span class="nav-number">14.</span> <span class="nav-text">IIS状态码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于PKI-CA证书"><span class="nav-number">15.</span> <span class="nav-text">关于PKI/CA证书</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#根本上反域CSRF漏洞"><span class="nav-number">16.</span> <span class="nav-text">根本上反域CSRF漏洞</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android常见风险"><span class="nav-number">17.</span> <span class="nav-text">Android常见风险</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#组件安全"><span class="nav-number">17.1.</span> <span class="nav-text">组件安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据存储安全"><span class="nav-number">17.2.</span> <span class="nav-text">数据存储安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据传输安全"><span class="nav-number">17.3.</span> <span class="nav-text">数据传输安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漏洞"><span class="nav-number">17.4.</span> <span class="nav-text">漏洞</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SDL安全开发流程"><span class="nav-number">18.</span> <span class="nav-text">SDL安全开发流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#培训"><span class="nav-number">18.1.</span> <span class="nav-text">培训</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全"><span class="nav-number">18.2.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#质量门-bug栏"><span class="nav-number">18.3.</span> <span class="nav-text">质量门/bug栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全和风险评估"><span class="nav-number">18.4.</span> <span class="nav-text">安全和风险评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安全和隐私风险评估"><span class="nav-number">18.5.</span> <span class="nav-text">安全和隐私风险评估</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反序列化"><span class="nav-number">19.</span> <span class="nav-text">反序列化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#魔术引号"><span class="nav-number">20.</span> <span class="nav-text">魔术引号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0day"><span class="nav-number">21.</span> <span class="nav-text">0day</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1day"><span class="nav-number">22.</span> <span class="nav-text">1day</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#堆叠注入"><span class="nav-number">23.</span> <span class="nav-text">堆叠注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#填充提示漏洞"><span class="nav-number">24.</span> <span class="nav-text">填充提示漏洞</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#If-Modified-Since和If-None-Match"><span class="nav-number">25.</span> <span class="nav-text">If-Modified-Since和If-None-Match</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NSA武器库"><span class="nav-number">26.</span> <span class="nav-text">NSA武器库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#explorer-exe"><span class="nav-number">26.1.</span> <span class="nav-text">explorer.exe</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反病毒沙盒"><span class="nav-number">27.</span> <span class="nav-text">反病毒沙盒</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hydra-爆破神器"><span class="nav-number">28.</span> <span class="nav-text">_Hydra(爆破神器)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#域渗透"><span class="nav-number">29.</span> <span class="nav-text">域渗透</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#kerberos"><span class="nav-number">29.1.</span> <span class="nav-text">kerberos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#golden-ticket"><span class="nav-number">29.2.</span> <span class="nav-text">golden ticket</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#powershell"><span class="nav-number">30.</span> <span class="nav-text">powershell</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#badusb"><span class="nav-number">31.</span> <span class="nav-text">badusb</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重放攻击"><span class="nav-number">32.</span> <span class="nav-text">重放攻击</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HMAC"><span class="nav-number">33.</span> <span class="nav-text">HMAC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#哪些是CSRF漏洞的防御方案"><span class="nav-number">34.</span> <span class="nav-text">哪些是CSRF漏洞的防御方案?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#以下避免sql注入方法"><span class="nav-number">35.</span> <span class="nav-text">以下避免sql注入方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mysqli-real-escape-string"><span class="nav-number">35.1.</span> <span class="nav-text">mysqli_real_escape_string</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#addslashes"><span class="nav-number">35.2.</span> <span class="nav-text">addslashes()</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">任小昊</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '8giMrXTEUVGGSKAeimuxTmMn-gzGzoHsz',
+        appKey: 'GbBFYJ3DKzUPO1pz2615KRxw',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
