@@ -3,8 +3,6 @@ title: docker-1 搭建漏洞环境并进行漏洞环境测试
 date: 2019-05-29 23:30:39
 categories: docker
 ---
-categories：docker
-title：docker搭建渗透环境并进行渗透
 # 目录
 - docker简介
 - docker的安装
