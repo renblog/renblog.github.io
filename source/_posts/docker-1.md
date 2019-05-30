@@ -230,17 +230,16 @@ docker-compose down //测试完毕之后，使用此命令即可结束服务，�
 ![3.png](../docker-1/3.png)
 
 # 用wireshark抓渗透过程的包
+
 - 抓到执行命令的流量
-
-![4.png](../docker-1/4.png)
-
+- 抓到响应体的包
 - 执行whoami命令的抓包
 
+
+![4.png](../docker-1/4.png)
 ![5.png](../docker-1/5.png)
 
-- 抓到响应体的包
 
-![root.png](../docker-1/root.png)
 
 
 
