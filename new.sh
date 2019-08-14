@@ -2,5 +2,5 @@
 hexo clean
 hexo g -d
 
-send "renblog"
-send "renhao619818859"
+#send "renblog"
+#send "renhao619818859"
