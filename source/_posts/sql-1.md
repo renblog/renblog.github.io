@@ -7,9 +7,9 @@ categories: SQL注入
 - url采集器的使用
 - SQL注入工具的使用
 - SQLliDumper工具的使用
-
-
 - 我已经将打包好的url采集器、python脚本、超级SQL注入工具、SQLiDumper存放在压缩包的同目录下，您的电脑需要提供python环境，Microsoft .NET framework4.5（推荐）
+
+<!---more--->
 
 # 一、使用url采集器搜集公网可能存在注入的url
 
@@ -19,7 +19,7 @@ categories: SQL注入
 
 ## 2.采集完成之后，右键下方url部分，导出
 
-![2.png](../slq-1/2.png)
+![2.png](../sql-1/2.png)
 
 ## 3.过滤url
 
